@@ -1,0 +1,25 @@
+{
+  "name": "dartanalyzer-annotations-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Creates annotations from dartanalyzer outputs.",
+  "main": "src/index.js",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/exec": "^1.0.3",
+    "@actions/github": "^2.1.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kitek/dartanalyzer-annotations-action.git"
+  },
+  "scripts": {
+    "build": "ncc build src/index.js"
+  },
+  "keywords": ["dartanalyzer", "annotations", "lint", "flutter", "dart"],
+  "author": "Marcin Kitowicz <marcin.kitowicz@gmail.com>",
+  "license": "MIT"
+}
