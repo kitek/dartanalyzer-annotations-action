@@ -18,7 +18,7 @@ Recommended is to use with one of the lint rulesets:
 **Required** Commit to attach the check to. If the trigger is `push`, this should just be `github.sha`. If the trigger is `pull_request`, this should be the `github.event.pull_request.head.sha`.
 
 
-## Example usage 
+## Example usage
 
 On pull requests branch:
 
@@ -81,3 +81,9 @@ jobs:
           commit_sha: ${{ github.sha }}
 
 ```
+
+## Example output:
+
+![alt text](https://raw.githubusercontent.com/kitek/dartanalyzer-annotations-action/master/doc-assets/checks.jpg?v=2)
+
+
