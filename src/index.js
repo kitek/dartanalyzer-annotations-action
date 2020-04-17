@@ -10,13 +10,16 @@ async function main() {
         const annotations = parseOutput(output);
         await createCheck(annotations);
     } catch (error) {
-      core.setFailed(error.message);
+        core.setFailed(error.message);
     }
 }
 
 async function runAnalyzer() {
     let output = '';
-    const options = {};
+    const workingDir = core.getInput('working-directory') || '.';
+    const options = {
+        cwd: workingDir,
+    };
     options.listeners = {
         stderr: (data) => {
             output += data.toString();
@@ -30,7 +33,7 @@ async function runAnalyzer() {
 
 function parseOutput(output) {
     let annotations = [];
-    if(output.length == 0) return annotations;
+    if (output.length == 0) return annotations;
 
     const lines = output.trim().split(/\r?\n/);
     const cwd = `${process.cwd()}/`;
@@ -62,7 +65,7 @@ function parseOutput(output) {
 }
 
 async function createCheck(annotations) {
-    if(annotations.length == 0) return;
+    if (annotations.length == 0) return;
 
     const checkName = core.getInput('check_name');
     const octokit = new github.GitHub(String(GITHUB_TOKEN));

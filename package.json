@@ -19,7 +19,13 @@
   "scripts": {
     "build": "ncc build src/index.js"
   },
-  "keywords": ["dartanalyzer", "annotations", "lint", "flutter", "dart"],
+  "keywords": [
+    "dartanalyzer",
+    "annotations",
+    "lint",
+    "flutter",
+    "dart"
+  ],
   "author": "Marcin Kitowicz <marcin.kitowicz@gmail.com>",
   "license": "MIT"
 }
