@@ -17,6 +17,9 @@ Recommended is to use with one of the lint rulesets:
 
 **Required** Commit to attach the check to. If the trigger is `push`, this should just be `github.sha`. If the trigger is `pull_request`, this should be the `github.event.pull_request.head.sha`.
 
+### `working-directory`
+
+Working directory to run analysis. If not specified will use the root project folder.
 
 ## Example usage
 
@@ -85,5 +88,3 @@ jobs:
 ## Example output:
 
 ![alt text](https://raw.githubusercontent.com/kitek/dartanalyzer-annotations-action/master/doc-assets/checks.jpg?v=2)
-
-
