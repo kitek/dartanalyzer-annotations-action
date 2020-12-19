@@ -10,10 +10,11 @@ inputs:
         this should just be github.sha. If the trigger is `pull_request`,
         this should be the github.event.pull_request.head.sha"
     required: true
-    working-directory:
-      description: "Working directory to run analysis. If not specified will
-        use the root project folder."
-      required: false
+  working-directory:
+    description: "Working directory to run analysis. If not specified will
+      use the root project folder."
+    required: false
+    default: '.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
