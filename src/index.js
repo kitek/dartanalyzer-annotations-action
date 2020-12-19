@@ -16,7 +16,7 @@ async function main() {
 
 async function runAnalyzer() {
     let output = '';
-    const workingDir = core.getInput('working-directory') || '.';
+    const workingDir = core.getInput('working-directory');
     const options = {
         cwd: workingDir,
     };
